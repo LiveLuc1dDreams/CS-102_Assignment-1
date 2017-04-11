@@ -1,4 +1,9 @@
-package Project;
+package ProjectExecuteClasses;
+
+import DatabaseObjects.UniversityDatabase;
+import Project.Course;
+import Project.Student;
+import ProjectExecuteClasses.Sorting;
 
 /**
  * Created by brandon on 4/8/17.

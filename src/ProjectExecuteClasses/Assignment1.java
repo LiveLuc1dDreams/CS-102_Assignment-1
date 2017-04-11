@@ -1,4 +1,4 @@
-package Project;
+package ProjectExecuteClasses;
 /**
  *This class will be the main method that runs the University database
  */

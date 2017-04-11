@@ -1,4 +1,7 @@
-package Project;
+package ProjectExecuteClasses;
+
+import Project.Course;
+import Project.Student;
 
 /**
  * Created by brandon on 4/8/17.

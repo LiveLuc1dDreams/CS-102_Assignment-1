@@ -1,4 +1,8 @@
-package Project;
+package DatabaseObjects;
+
+import Project.CompletionEvent;
+import Project.Course;
+import Project.Student;
 
 /**
  * Created by brandon on 4/8/17.
