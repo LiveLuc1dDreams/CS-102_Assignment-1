@@ -13,6 +13,6 @@ public class InputHandler {
     Scanner inputReader = new Scanner(in);
 
     //Method that reads the type of input and returns a int corresponding to what it found: 1 for student, 2 for course, 3 for completion
-    public static
+
 
 }

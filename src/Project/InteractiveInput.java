@@ -11,7 +11,7 @@ public class InteractiveInput {
 
     //Strings to store the course and student lists in the correct formatting that will be displayed in the interactive input
     private String courseList = "Course List:\n" +
-            Sorting.sortCoursesById( UniversityDatabase.CourseDatabase[] );
+            Sorting.sortCoursesById( UniversityDatabase.CourseDatabase[] )
     private String studentList = "";
 
 
@@ -19,7 +19,7 @@ public class InteractiveInput {
         String formattedStudentList;
 
         return formattedStudentList;
-    }
+        }
 
 
     public String printCourseList( Course courseList ){

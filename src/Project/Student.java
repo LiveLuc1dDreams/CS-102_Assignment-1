@@ -12,6 +12,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String birthyear;
+    private String country;
 
     //Student object constructor
 
@@ -72,9 +73,6 @@ public class Student {
     public String getCountry() {
         return country;
     }
-
-    private String country;
-
 
     public int getGPA() {
         return GPA;

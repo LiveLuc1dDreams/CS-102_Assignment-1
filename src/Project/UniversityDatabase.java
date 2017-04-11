@@ -3,11 +3,14 @@ package Project;
 /**
  * Created by brandon on 4/8/17.
  * This class implements methods to search for student and course objects from their respective arrays, which are also created in this class
+ *
+ * ACTUALLY DEFINES THE UNIVERSITY DATABASE OBJECT TYPES
  */
 public class UniversityDatabase {
 
-    public static Student StudentDatabase[];
-    public static Course CourseDatabase[];
+    private Student StudentDatabase[];
+    private Course CourseDatabase[];
+    private CompletionEvent CompletionEventDatabase[];
     public static final int maxCourseArraySize = 100;
     public static final int maxStudentArraySize = 100;
 
