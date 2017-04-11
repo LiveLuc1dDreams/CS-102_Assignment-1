@@ -12,7 +12,9 @@ import ProjectObjects.Student;
  */
 public class UniversityDatabase {
 
-    private static CompletionEvent CompletionEventDatabase[];
+    private static CompletionEventDatabase CompletionEventDatabase;
+    private static StudentDatabase StudentDatabase;
+    private static CourseDatabase CourseDatabase;
 
     //Getter methods for max array sizes
 

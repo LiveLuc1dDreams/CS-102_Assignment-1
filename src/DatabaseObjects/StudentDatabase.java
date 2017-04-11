@@ -10,8 +10,6 @@ public class StudentDatabase {
 
     public static final int maxStudentArraySize = 100;
 
-    private static Student[] StudentDatabase;
-
     public static int getMaxStudentArraySize() {
         return maxStudentArraySize;
     }

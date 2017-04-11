@@ -7,7 +7,6 @@ import ProjectObjects.Course;
  */
 public class CourseDatabase {
     public static final int maxCourseArraySize = 100;
-    private static Course[] CourseDatabase;
 
     public static int getMaxCourseArraySize() {
         return maxCourseArraySize;
