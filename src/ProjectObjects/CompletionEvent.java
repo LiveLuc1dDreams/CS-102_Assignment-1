@@ -1,4 +1,4 @@
-package Project;
+package ProjectObjects;
 
 /**
  * Created by brandon on 4/8/17.

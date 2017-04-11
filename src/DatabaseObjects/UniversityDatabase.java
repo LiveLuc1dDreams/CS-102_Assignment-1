@@ -1,8 +1,8 @@
 package DatabaseObjects;
 
-import Project.CompletionEvent;
-import Project.Course;
-import Project.Student;
+import ProjectObjects.CompletionEvent;
+import ProjectObjects.Course;
+import ProjectObjects.Student;
 
 /**
  * Created by brandon on 4/8/17.
@@ -12,21 +12,9 @@ import Project.Student;
  */
 public class UniversityDatabase {
 
-    private Student StudentDatabase[];
-    private Course CourseDatabase[];
-    private CompletionEvent CompletionEventDatabase[];
-    public static final int maxCourseArraySize = 100;
-    public static final int maxStudentArraySize = 100;
+    private static CompletionEvent CompletionEventDatabase[];
 
-     //Getter methods for max array sizes
-
-    public int getMaxCourseArraySize() {
-        return maxCourseArraySize;
-    }
-
-    public int getMaxStudentArraySize() {
-        return maxStudentArraySize;
-    }
+    //Getter methods for max array sizes
 
     //recursive method to search for a Student object
     public static int searchStudents(Student StudentDatabase[], int first, int last, Student value) {

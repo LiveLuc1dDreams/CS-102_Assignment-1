@@ -1,7 +1,7 @@
 package ProjectExecuteClasses;
 
-import Project.Course;
-import Project.Student;
+import ProjectObjects.Course;
+import ProjectObjects.Student;
 
 /**
  * Created by brandon on 4/8/17.

@@ -1,9 +1,8 @@
 package ProjectExecuteClasses;
 
 import DatabaseObjects.UniversityDatabase;
-import Project.Course;
-import Project.Student;
-import ProjectExecuteClasses.Sorting;
+import ProjectObjects.Course;
+import ProjectObjects.Student;
 
 /**
  * Created by brandon on 4/8/17.
@@ -11,7 +10,7 @@ import ProjectExecuteClasses.Sorting;
  */
 public class InteractiveInput {
 
-    private String instructions = "Welcome to the CS-102 Project University Database\n" +
+    private String instructions = "Welcome to the CS-102 ProjectObjects University Database\n" +
             "";
 
     //Strings to store the course and student lists in the correct formatting that will be displayed in the interactive input
