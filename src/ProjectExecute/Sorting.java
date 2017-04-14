@@ -1,4 +1,4 @@
-package ProjectExecuteClasses;
+package ProjectExecute;
 
 import ProjectObjects.Course;
 import ProjectObjects.Student;

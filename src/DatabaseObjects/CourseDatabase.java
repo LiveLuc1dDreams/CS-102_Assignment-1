@@ -1,7 +1,5 @@
 package DatabaseObjects;
 
-import ProjectObjects.Course;
-
 /**
  * Created by brandon on 4/11/17.
  */

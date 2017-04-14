@@ -1,4 +1,4 @@
-package ProjectExecuteClasses;
+package ProjectExecute;
 
 import DatabaseObjects.UniversityDatabase;
 import ProjectObjects.Course;
@@ -14,7 +14,7 @@ public class InteractiveInput {
             "";
 
     //Strings to store the course and student lists in the correct formatting that will be displayed in the interactive input
-    private String courseList = "Course List:\n" +
+    private String courseList = "Course ListArrayBased:\n" +
             Sorting.sortCoursesById( UniversityDatabase.CourseDatabase[] )
     private String studentList = "";
 
