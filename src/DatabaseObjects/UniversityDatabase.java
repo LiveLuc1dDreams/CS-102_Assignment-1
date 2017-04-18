@@ -12,9 +12,9 @@ import ProjectObjects.Student;
  */
 public class UniversityDatabase {
 
-    private static CompletionEventDatabase CompletionEventDatabase;
-    private static StudentDatabase StudentDatabase;
-    private static CourseDatabase CourseDatabase;
+    private CompletionEventDatabase CompletionEventDatabase;
+    private StudentDatabase StudentDatabase;
+    private CourseDatabase CourseDatabase;
 
     //Getter methods for max array sizes
 
@@ -36,12 +36,12 @@ public class UniversityDatabase {
                 index = mid;
             }
 
-            //
+            //First half check
             else if ( Integer.getInteger( value.getUniqueId() ) < Integer.getInteger( StudentDatabase[mid].getUniqueId() ) ) {
                 index = searchStudents(StudentDatabase, first, mid, value);
             }
 
-
+            //Seconds Half Check
             else {
                 index = searchStudents(StudentDatabase, mid+1, last, value);
             }
@@ -69,12 +69,12 @@ public class UniversityDatabase {
                 index = mid;
             }
 
-            //
+            //First half check
             else if ( Integer.getInteger( value.getUniqueId() ) < Integer.getInteger( CourseDatabase[mid].getUniqueId() ) ) {
                 index = searchCourses(CourseDatabase, first, mid, value);
             }
 
-
+            //Second half check
             else {
                 index = searchCourses(CourseDatabase, mid+1, last, value);
             }
@@ -83,4 +83,6 @@ public class UniversityDatabase {
         //return the index of where the Course Object was stored, or return that it was not found
         return index;
     }
+
+
 }

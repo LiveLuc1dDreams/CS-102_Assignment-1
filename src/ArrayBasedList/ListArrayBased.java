@@ -47,8 +47,14 @@ public abstract class ListArrayBased implements ListInterface {
 
         if ( numItems >= MAX_LIST ) {
 
-            // Make room for the new item by shifting all items at the position >= index toward the
-            for ( int pos = numItems; pos >= )
+            throw new ListException( "ListException on add.");
+
+        }
+
+        if ( ( index >= 0 ) && ( index  <= numItems ) ) {
+
+
+
         }
     }
 
