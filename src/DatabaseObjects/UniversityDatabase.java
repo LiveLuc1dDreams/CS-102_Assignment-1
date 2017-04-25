@@ -15,8 +15,6 @@ public class UniversityDatabase {
     private StudentDatabase StudentDatabase;
     private CourseDatabase CourseDatabase;
 
-    //Getter methods for max array sizes
-
     //recursive method to search for a Student object
     public static int searchStudents(Student StudentDatabase[], int first, int last, Student value) {
         int index;
