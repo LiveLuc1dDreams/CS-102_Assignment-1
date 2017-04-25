@@ -9,9 +9,13 @@ import ProjectObjects.Student;
 
 public class StudentDatabase {
 
-    public static final int maxStudentArraySize = 100;
+    public static final int MAXSTUDENTARRAYSIZE = 100;
 
     public static int getMaxStudentArraySize() {
-        return maxStudentArraySize;
+        return MAXSTUDENTARRAYSIZE;
+    }
+
+    public StudentDatabase() {
+        Student database[] = new Student[MAXSTUDENTARRAYSIZE];
     }
 }

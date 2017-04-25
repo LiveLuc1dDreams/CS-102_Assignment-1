@@ -12,7 +12,6 @@ import ProjectObjects.Student;
  */
 public class UniversityDatabase {
 
-    private CompletionEventDatabase CompletionEventDatabase;
     private StudentDatabase StudentDatabase;
     private CourseDatabase CourseDatabase;
 
