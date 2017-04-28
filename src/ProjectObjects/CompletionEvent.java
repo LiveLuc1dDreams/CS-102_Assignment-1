@@ -7,27 +7,40 @@ package ProjectObjects;
 public class CompletionEvent{
 
     private String finalGrade;
-    private int finalGradeAssignmentDate;
+    private int dateYears;
+    private int dateDays;
+    private int dateMonths;
     private String courseId;
     private String studentId;
 
     //CompletionEvent object constructor
 
-    public CompletionEvent(String finalGrade, int finalGradeAssignmentDate, String courseId, String studentId) {
+    public CompletionEvent(String finalGrade, int dateDays, int dateMonths, int dateYears, String courseId, String studentId) {
         this.finalGrade = finalGrade;
-        this.finalGradeAssignmentDate = finalGradeAssignmentDate;
+        this.dateDays = dateDays;
+        this.dateMonths = dateMonths;
+        this.dateYears = dateYears;
         this.courseId = courseId;
         this.studentId = studentId;
     }
 
     //Getter methods
 
-    public String getFinalGrade() {
-        return finalGrade;
+
+    public int getDateYears() {
+        return dateYears;
     }
 
-    public int getFinalGradeAssignmentDate() {
-        return finalGradeAssignmentDate;
+    public int getDateDays() {
+        return dateDays;
+    }
+
+    public int getDateMonths() {
+        return dateMonths;
+    }
+
+    public String getFinalGrade() {
+        return finalGrade;
     }
 
     public String getCourseId() {
@@ -40,12 +53,21 @@ public class CompletionEvent{
 
     //Setter methods
 
-    public void setFinalGrade(String finalGrade) {
-        this.finalGrade = finalGrade;
+
+    public void setDateYears(int dateYears) {
+        this.dateYears = dateYears;
     }
 
-    public void setFinalGradeAssignmentDate(int finalGradeAssignmentDate) {
-        this.finalGradeAssignmentDate = finalGradeAssignmentDate;
+    public void setDateDays(int dateDays) {
+        this.dateDays = dateDays;
+    }
+
+    public void setDateMonths(int dateMonths) {
+        this.dateMonths = dateMonths;
+    }
+
+    public void setFinalGrade(String finalGrade) {
+        this.finalGrade = finalGrade;
     }
 
     public void setCourseId(String courseId) {

@@ -1,19 +1,27 @@
 package DatabaseObjects;
 
-import ProjectObjects.CompletionEvent;
 import ProjectObjects.Course;
 import ProjectObjects.Student;
 
 /**
  * Created by brandon on 4/8/17.
  * This class implements methods to search for student and course objects from their respective arrays, which are also created in this class
- *
- * ACTUALLY DEFINES THE UNIVERSITY DATABASE OBJECT TYPES
+ **
  */
 public class UniversityDatabase {
 
-    private StudentDatabase StudentDatabase;
-    private CourseDatabase CourseDatabase;
+    private StudentDatabase students = null;
+    private CourseDatabase courses = null;
+
+    //Default constructor
+    public UniversityDatabase() {
+        students = new StudentDatabase();
+        courses = new CourseDatabase();
+    }
+
+    public boolean addCourse(Course course) {
+        return courses.addCourse(course);
+    }
 
     //recursive method to search for a Student object
     public static int searchStudents(Student StudentDatabase[], int first, int last, Student value) {
@@ -80,6 +88,20 @@ public class UniversityDatabase {
         //return the index of where the Course Object was stored, or return that it was not found
         return index;
     }
+
+    //Converts a grade in letter-format int a grade in number-format
+    //Note: client-code doesn't need a database instance to call this
+    //Note: call this function using UniversityDatabase.gradeToFloat( "B+" );
+    public static float gradeToFloat( String grade ) {
+        // ...
+        return 0.0F;
+    }
+
+    //Resets the database, making it empty
+    public void reset() {
+
+    }
+
 
 
 }

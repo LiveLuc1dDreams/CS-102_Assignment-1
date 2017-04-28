@@ -21,7 +21,6 @@ public class Course {
     }
 
     //Getter methods
-
     public String getCourse() {
         return course;
     }
