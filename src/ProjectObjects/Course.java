@@ -13,8 +13,7 @@ public class Course {
 
     //Course object constructor
 
-    public Course(String course, String credits, String uniqueId, String name) {
-        this.course = course;
+    public Course(String uniqueId, String name, String credits) {
         this.credits = credits;
         this.uniqueId = uniqueId;
         this.name = name;

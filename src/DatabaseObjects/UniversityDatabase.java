@@ -1,5 +1,6 @@
 package DatabaseObjects;
 
+import ProjectObjects.CompletionEvent;
 import ProjectObjects.Course;
 import ProjectObjects.Student;
 
@@ -103,5 +104,30 @@ public class UniversityDatabase {
     }
 
 
+    public void addStudent(String currLine) {
+        Student student = new Student( currLine.split("/")[1],
+                currLine.split("/")[2],
+                currLine.split("/")[3],
+                currLine.split("/")[4],
+                currLine.split("/")[5] );
 
+        this.students.addStudent(student);
+    }
+
+    public void addCourse(String currLine) {
+        Course course = new Course( currLine.split("/")[1],
+                currLine.split("/")[2],
+                currLine.split("/")[3] );
+
+        this.courses.addCourse(course);
+    }
+
+    public void addCompletionEvent(String currLine) {
+        CompletionEvent completion = new CompletionEvent( currLine.split("/")[1],
+                currLine.split("/")[2],
+                currLine.split("/")[3],
+                Integer.parseInt( currLine.split("/")[4] ) );
+
+        this.students.addCompletionEvent(completion);
+    }
 }

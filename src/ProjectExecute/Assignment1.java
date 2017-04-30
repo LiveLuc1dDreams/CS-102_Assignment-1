@@ -1,6 +1,7 @@
 package ProjectExecute;
 
 import DatabaseObjects.UniversityDatabase;
+import ProjectObjects.Student;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -21,31 +22,29 @@ public class Assignment1 {
 
         UniversityDatabase mainDatabase = new UniversityDatabase();
 
+        fillDatabase(fileReader);
+
+
     }
 
-    public static void fillDatabse(Scanner inFile) {
-        try {
-            while ( inFile.hasNextLine() ) {
-                String currLine = inFile.nextLine();
+    //this method will be used to add all the items found in the
+    public static void fillDatabase(Scanner inFile) {
+        while ( inFile.hasNextLine() ) {
+            String currLine = inFile.nextLine();
 
-                switch ( currLine.split("/")[0] ) {
-                    case "STUDENT":
+            switch ( currLine.split("/")[0] ) {
+                case "STUDENT":
+                    UniversityDatabase.addStudent(currLine);
+                    break;
 
-                        break;
+                case "COMPLETION":
+                    UniversityDatabase.addCourse(currLine);
+                    break;
 
-                    case "COMPLETION":
+                case "Course":
 
-                        break;
-
-                    case "Course":
-
-                        break;
-                }
+                    break;
             }
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("The input file was not found");
-        } catch (UniversityDatabaseException e) {
-
         }
     }
 }

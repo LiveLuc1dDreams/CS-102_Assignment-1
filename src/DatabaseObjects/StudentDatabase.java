@@ -2,6 +2,7 @@ package DatabaseObjects;
 
 import ArrayBasedList.ListArrayBased;
 import ArrayBasedList.ListException;
+import ProjectObjects.CompletionEvent;
 import ProjectObjects.Course;
 import ProjectObjects.Student;
 
@@ -28,7 +29,7 @@ public class StudentDatabase {
     }
 
     public Student searchStudentsById(String id) {
-        //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the paramater id.
+        //Search in the array based list from index 0 to size - 1, get all items and check if their ID matches the paramater id.
         //If the id is not found then return exception.
 
         try {
@@ -45,4 +46,7 @@ public class StudentDatabase {
         return null;
     }
 
+    public void addCompletionEvent(CompletionEvent completion) {
+
+    }
 }

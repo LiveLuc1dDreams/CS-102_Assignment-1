@@ -16,8 +16,7 @@ public class Student {
 
     //Student object constructor
 
-    public Student(int GPA, String uniqueId, String firstName, String lastName, String birthyear, String country) {
-        this.GPA = GPA;
+    public Student(String uniqueId, String firstName, String lastName, String birthyear, String country) {
         this.uniqueId = uniqueId;
         this.firstName = firstName;
         this.lastName = lastName;
