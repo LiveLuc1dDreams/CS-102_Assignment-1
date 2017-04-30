@@ -26,9 +26,11 @@ public class CourseDatabase {
     public Course searchCourseById(String id) {
         //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the paramater id.
         //If the id is not found then return exception.
+
+        for ( int i = 0; )
     }
 
-    //TODO:User innput interaction needs an interface
+    //TODO:User input interaction needs an interface
 
 
 }
