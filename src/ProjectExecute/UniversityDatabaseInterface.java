@@ -10,15 +10,15 @@ public interface UniversityDatabaseInterface {
     //Load database from the file, adding new data to the current database.
     //fileName: filename of the input database file
     //UniversityDatabaseException: if file not found or file too big
-    public void loadFromFile( String fileName ) throws UniversityDatabaseException;
+    void loadFromFile(String fileName) throws UniversityDatabaseException;
 
     //Prints all the students in the database on the console
     //Note: prints sorted by student ID
-    public void printAllStudents() throws UniversityDatabaseException;
+    void printAllStudents() throws UniversityDatabaseException;
 
     //Prints all the courses in the database on the console
     //Note: prints sorted by course id
-    public void printAllCourses();
+    void printAllCourses();
 
     //Prints all the courses (completion events) of a student on the console
     //Note: prints sorted by date
