@@ -1,5 +1,10 @@
 package ProjectObjects;
 
+import ArrayBasedList.ListArrayBased;
+import org.omg.CORBA.COMM_FAILURE;
+
+import java.util.List;
+
 /**
  * Created by brandon on 4/8/17.
  * This class implements the Student object that will be used in the University database
@@ -13,6 +18,7 @@ public class Student {
     private String lastName;
     private String birthyear;
     private String country;
+    private ListArrayBased completions = null;
 
     //Student object constructor
 
@@ -22,8 +28,13 @@ public class Student {
         this.lastName = lastName;
         this.birthyear = birthyear;
         this.country = country;
+        this.completions = new ListArrayBased();
     }
 
+    //Adds a completion event to a student object's list
+    public void addCompletionEvent(CompletionEvent completion) {
+        this.completions.add(completions.size(), completion);
+    }
 
     //Setter methods for vars
 

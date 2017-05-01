@@ -20,31 +20,53 @@ public class Assignment1 {
         //Scanner that will be used to read the input from the file infile
         Scanner fileReader = new Scanner(inFile);
 
+        //Instantiates a database object to store all of the University's students, courses, and completions
         UniversityDatabase mainDatabase = new UniversityDatabase();
 
-        fillDatabase(fileReader);
+        //goes through and adds all of the objects from the input file to the database
+        fillDatabase(fileReader, mainDatabase);
+
+        //Scanner that will take the user input from the interactive input
+        Scanner commandSelection = new Scanner(System.in);
 
 
     }
 
+    //this method will run the instructions for the interactive input for the user
+    private static void printInstructions() {
+        System.out.print("Welcome to the CS-102 Student-Course Manager\n" +
+                "Current available commands:\n" +
+                "1 --> Print all students.\n" +
+                "2 --> Print all courses.\n" +
+                "3 --> Print all students of a course.\n" +
+                "4 --> Print all courses of a student.\n" +
+                "9 --> Exit");
+    }
+
+    //this method will print out all of the
+
+    //this method runs the
+
     //this method will be used to add all the items found in the
-    public static void fillDatabase(Scanner inFile) {
+    public static void fillDatabase(Scanner inFile, UniversityDatabase mainDatabase) {
         while ( inFile.hasNextLine() ) {
             String currLine = inFile.nextLine();
 
             switch ( currLine.split("/")[0] ) {
                 case "STUDENT":
-                    UniversityDatabase.addStudent(currLine);
+                    mainDatabase.addStudent(currLine);
                     break;
 
                 case "COMPLETION":
-                    UniversityDatabase.addCourse(currLine);
+                    mainDatabase.addCompletionEvent(currLine);
                     break;
 
                 case "Course":
-
+                    mainDatabase.addCourse(currLine);
                     break;
             }
         }
     }
+
+
 }

@@ -100,7 +100,8 @@ public class UniversityDatabase {
 
     //Resets the database, making it empty
     public void reset() {
-
+        this.students.removeAll();
+        this.courses.removeAll();
     }
 
 

@@ -41,6 +41,10 @@ public class CourseDatabase {
         return null;
     }
 
+    public void removeAll() {
+        this.courses.removeAll();
+    }
+
     //TODO:User input interaction needs an interface
 
 

@@ -47,6 +47,10 @@ public class StudentDatabase {
     }
 
     public void addCompletionEvent(CompletionEvent completion) {
+        searchStudentsById( completion.getStudentId() ).addCompletionEvent( completion );
+    }
 
+    public void removeAll() {
+        this.students.removeAll();
     }
 }
