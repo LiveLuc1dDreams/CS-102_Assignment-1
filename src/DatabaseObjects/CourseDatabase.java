@@ -24,9 +24,9 @@ public class CourseDatabase {
     }
 
     public Course searchCourseById(String id) {
-        //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the paramater id.
-        //If the id is not found then return exception.
 
+        //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the parameter id.
+        //If the id is not found then return exception.
         try {
             for (int i = 0; i < courses.size(); i++) {
                 Course currCourse = (Course) courses.get(i);

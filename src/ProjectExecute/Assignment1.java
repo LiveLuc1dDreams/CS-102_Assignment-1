@@ -49,6 +49,8 @@ public class Assignment1 {
 
     //this method will be used to add all the items found in the
     public static void fillDatabase(Scanner inFile, UniversityDatabase mainDatabase) {
+
+        //Go through all of the lines in the file and a
         while ( inFile.hasNextLine() ) {
             String currLine = inFile.nextLine();
 
