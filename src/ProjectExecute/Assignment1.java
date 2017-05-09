@@ -20,6 +20,8 @@ import java.io.File;
 //TODO:
 //TODO:
 //Functionality To Be Implemented:
+//TODO: Way to wait for user input
+//TODO: Switch statement for user input selection
 //TODO: Add method to change the location of the input file
 //TODO: User input interaction needs an interface
 //TODO: Re-intake data from a new file specified by the user
@@ -36,6 +38,9 @@ import java.io.File;
 //TODO: All classes except Assignment2 should be in the package UniversityDatabase and all classes are package private, except UniversityDatabase which is public.
 //TODO: UniversityDatabase, CourseDatabase, StudentDatabase should have interfaces UniversityDatabaseInterface, etc...
 //TODO: Duplicate items need to be handled
+//TODO:
+//TODO:
+//TODO:
 
 public class Assignment1 {
 
