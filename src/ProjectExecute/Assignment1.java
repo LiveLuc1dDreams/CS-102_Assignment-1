@@ -46,11 +46,12 @@ public class Assignment1 {
 
 
         } catch (FileNotFoundException e) {
-            //The file wasn't found thrown a new exception
-            throw new
+
+            //The file wasn't found so a new exception is thrown.
+            throw new FileNotFoundException("FileNotFoundException An input file wasn't found");
 
         } catch (UniversityDatabaseException e) {
-
+            //There was an error while creating the database. TODO: need to make this do something useful
         }
 
 
@@ -58,6 +59,7 @@ public class Assignment1 {
 
     //This method will run the instructions for the interactive input for the user
     private static void printInstructions() {
+
         System.out.print("Welcome to the CS-102 Student-Course Manager\n" +
                 "Current available commands:\n" +
                 "1 --> Print all students.\n" +
@@ -65,6 +67,7 @@ public class Assignment1 {
                 "3 --> Print all students of a course.\n" +
                 "4 --> Print all courses of a student.\n" +
                 "9 --> Exit");
+
     }
 
     //This method will be used to add all the items found in the input file to the database
