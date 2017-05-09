@@ -4,7 +4,5 @@ Main class to run the program
 
 
 
-TODO: Add method to get the gpa
-TODO: Have each letter grade = a gpa i.e. A = 4.0 etc
-TODO: Take the average gpa of all the courses a student has completed and divide by the number of courses
+
 
