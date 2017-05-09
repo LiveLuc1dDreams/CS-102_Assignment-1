@@ -1,9 +1,6 @@
 package ProjectObjects;
 
 import ArrayBasedList.ListArrayBased;
-import org.omg.CORBA.COMM_FAILURE;
-
-import java.util.List;
 
 /**
  * Created by brandon on 4/8/17.
@@ -11,14 +8,14 @@ import java.util.List;
  */
 
 public class Student {
-
-    private int GPA;
+    
     private String uniqueId;
     private String firstName;
     private String lastName;
     private String birthyear;
     private String country;
-    private ListArrayBased completions = null;
+
+    private ListArrayBased studentCompletions = null;
 
     //Student object constructor
 
@@ -28,19 +25,19 @@ public class Student {
         this.lastName = lastName;
         this.birthyear = birthyear;
         this.country = country;
-        this.completions = new ListArrayBased();
+
+        this.studentCompletions = new ListArrayBased();
     }
 
     //Adds a completion event to a student object's list
-    public void addCompletionEvent(CompletionEvent completion) {
-        this.completions.add(completions.size(), completion);
+    public void addCompletionEvent(CompletionEvent completion) throws StudentException { //TODO: make the student exception classe to extend RunTimeException
+        //If the check returns not valid
+        //TODO: need to check that the course is for the correct student, ie the id of the student matches the id in the completionevent
+        this.studentCompletions.add(studentCompletions.size(), completion);
+        //When the completion is added it will decide where to put it based upon the date
     }
 
     //Setter methods for vars
-
-    public void setGPA(int GPA) {
-        this.GPA = GPA;
-    }
 
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
@@ -85,6 +82,10 @@ public class Student {
     }
 
     public int getGPA() {
-        return GPA;
+        int GPA = -1; 
+
+        
+        return GPA; //TODO: make this a calculation based upon studentCompletions
+        //TODO: Take the average gpa of all the courses a student has completed and divide by the number of courses
     }
 }

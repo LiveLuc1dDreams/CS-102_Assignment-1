@@ -20,6 +20,9 @@ import java.io.File;
 //TODO:
 //TODO:
 //Functionality To Be Implemented:
+//TODO: Completion events need to be sorted by date
+//TODO:
+//TODO:
 //TODO: Way to wait for user input
 //TODO: Switch statement for user input selection
 //TODO: Add method to change the location of the input file
@@ -27,7 +30,6 @@ import java.io.File;
 //TODO: Re-intake data from a new file specified by the user
 //TODO: Add method to get the gpa
 //TODO: Have each letter grade = a gpa i.e. A = 4.0 etc
-//TODO: Take the average gpa of all the courses a student has completed and divide by the number of courses
 //TODO: Make a Doubly linked, circular list for project 2 specifications
 //TODO: 3 new Commands to add a student, course, and completion event to the database. These will take in all the parameters from object constructors.
 //TODO: Student Course completion event list has to be linked reference based.
@@ -38,9 +40,6 @@ import java.io.File;
 //TODO: All classes except Assignment2 should be in the package UniversityDatabase and all classes are package private, except UniversityDatabase which is public.
 //TODO: UniversityDatabase, CourseDatabase, StudentDatabase should have interfaces UniversityDatabaseInterface, etc...
 //TODO: Duplicate items need to be handled
-//TODO:
-//TODO:
-//TODO:
 
 public class Assignment1 {
 
