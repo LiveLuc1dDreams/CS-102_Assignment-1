@@ -19,6 +19,11 @@ public class Assignment1 {
     // add the items from the input file to the database, and take commands from the user.
     public static void main(String[] args) throws UniversityDatabaseException, FileNotFoundException {
 
+        //Variable to store the path to the input file.
+        //The location "/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt" is what I have
+        // set as the default.
+        String inFileLocation = "/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt";
+
         //File object to be used to read the input for the database from a text file
         File inFile = new File("/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt");
 
