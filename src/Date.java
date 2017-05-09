@@ -18,7 +18,6 @@ public class Date {
 
     public boolean isOlder( Date d) {
 
-        //TODO: add comparison here, if the dates are equal just return true and add the new node to
         if ( years < d.getYears() ) {
             return true;
         } else if ( years == d.getYears() && months < d.getMonths() ) {

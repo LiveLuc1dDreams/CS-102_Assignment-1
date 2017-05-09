@@ -5,13 +5,15 @@ import ProjectObjects.CompletionEvent;
  */
 
 //Sorted (by date, older first) reference base linked list of completion events.
-class LinearLinkedList {
+class CompletionEventLinkedList {
 
 
-    private LinearLinkedNode head; //TODO: need node class
+    private LinearLinkedNode head;
+
+    private int numNodes;
 
     //Default Constructor
-    public LinearLinkedList() {
+    public CompletionEventLinkedList() {
         head = null;
     }
 
@@ -24,6 +26,7 @@ class LinearLinkedList {
         if ( head == null ) {
             newNode.setNext(null);
             head = newNode;
+            numNodes++;
         } else {
 
             //Find "curr" and "prev" to perform insertion. These are temp variables.
@@ -41,12 +44,19 @@ class LinearLinkedList {
             if ( curr == head ) {
                 newNode.setNext( null );
                 prev.setNext( newNode );
+                numNodes++;
 
             //Standard case. Insertion in middle or last
             } else {
                 newNode.setNext(curr);
                 prev.setNext(newNode);
+                numNodes++;
             }
+
         }
+    }
+
+    public Object get( int i ) throws CompletionEventListException {
+
     }
 }

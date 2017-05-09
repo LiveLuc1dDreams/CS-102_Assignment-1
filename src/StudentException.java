@@ -4,6 +4,6 @@
 public class StudentException extends RuntimeException {
 
     public StudentException(String studentException) {
-
+        super(studentException);
     }
 }
