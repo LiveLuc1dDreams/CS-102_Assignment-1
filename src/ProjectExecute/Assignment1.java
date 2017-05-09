@@ -26,9 +26,7 @@ public class Assignment1 {
         //goes through and adds all of the objects from the input file to the database
         fillDatabase(fileReader, mainDatabase);
 
-        //Scanner that will take the user input from the interactive input
-        Scanner commandSelection = new Scanner(System.in);
-
+        //TODO: start the user input method
 
     }
 
@@ -43,17 +41,17 @@ public class Assignment1 {
                 "9 --> Exit");
     }
 
-    //this method will print out all of the
-
-    //this method runs the
-
     //this method will be used to add all the items found in the
-    public static void fillDatabase(Scanner inFile, UniversityDatabase mainDatabase) {
+    private static void fillDatabase(Scanner inFile, UniversityDatabase mainDatabase) {
 
-        //Go through all of the lines in the file and a
+        //Go through all of the lines in the file and
         while ( inFile.hasNextLine() ) {
+
+            //Set the current line of the input file to the currLine variable
+            //The variable currline will be used to process the input
             String currLine = inFile.nextLine();
 
+            //Depending upon the first part of the current line
             switch ( currLine.split("/")[0] ) {
                 case "STUDENT":
                     mainDatabase.addStudent(currLine);
@@ -63,12 +61,18 @@ public class Assignment1 {
                     mainDatabase.addCompletionEvent(currLine);
                     break;
 
-                case "Course":
+                case "COURSE":
                     mainDatabase.addCourse(currLine);
                     break;
             }
         }
     }
 
+    private static void Input(){
+        //Scanner that will take the user input from the interactive input
+        Scanner commandSelection = new Scanner(System.in);
 
+        //When the user  for the user to select the command option
+
+    }
 }
