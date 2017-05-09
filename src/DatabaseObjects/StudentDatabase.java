@@ -30,7 +30,8 @@ public class StudentDatabase {
 
     public Student searchStudentsById(String id) {
         //Search in the array based list from index 0 to size - 1, get all items and check if their ID matches the paramater id.
-        //If the id is not found then return exception.
+        //If the id is not found then return a null value
+        //TODO: make it so that you can return something more useful than a null value if the student wasn't found. Maybe return a object containing the student object and a boolean value. This migh be too hard.
 
         try {
             for (int i = 0; i < students.size(); i++) {
@@ -41,7 +42,7 @@ public class StudentDatabase {
                 }
             }
         } catch (ListException e) {
-            throw new ListException("ListException id not found");
+            return null;
         }
         return null;
     }

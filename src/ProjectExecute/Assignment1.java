@@ -30,22 +30,29 @@ public class Assignment1 {
         //Try and find the input file and throw an exception if it is not found
         try {
 
-        } catch (FileNotFoundException ) {
+            //File object to be used to read the input for the database from a text file
+            File inFile = new File(inFileLocation);
+
+            //Scanner that will be used to read the input from the file infile
+            Scanner fileReader = new Scanner(inFile);
+
+            //Instantiates a database object to store all of the University's students, courses, and completions
+            UniversityDatabase mainDatabase = new UniversityDatabase();
+
+            //Goes through and adds all of the objects from the input file to the database
+            fillDatabase(fileReader, mainDatabase);
+
+            //TODO: start the user input method
+
+
+        } catch (FileNotFoundException e) {
+            //The file wasn't found thrown a new exception
+            throw new
+
+        } catch (UniversityDatabaseException e) {
 
         }
-        //File object to be used to read the input for the database from a text file
-        File inFile = new File(inFileLocation);
 
-        //Scanner that will be used to read the input from the file infile
-        Scanner fileReader = new Scanner(inFile);
-
-        //Instantiates a database object to store all of the University's students, courses, and completions
-        UniversityDatabase mainDatabase = new UniversityDatabase();
-
-        //Goes through and adds all of the objects from the input file to the database
-        fillDatabase(fileReader, mainDatabase);
-
-        //TODO: start the user input method
 
     }
 
