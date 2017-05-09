@@ -50,6 +50,7 @@ public class StudentDatabase {
         searchStudentsById( completion.getStudentId() ).addCompletionEvent( completion );
     }
 
+    //Calls the method from the StudentDatabase class to remove all of the items from the database
     public void removeAll() {
         this.students.removeAll();
     }

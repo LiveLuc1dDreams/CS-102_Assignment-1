@@ -11,8 +11,10 @@ import java.io.File;
  *This class will be the main method that runs the University database
  */
 
-//General todo items:
+//General tasks:
     //TODO: add method to change the location of the input file
+    //TODO: Files left to comment:  CourseDatabase, StudentDatabase, Student, Course, CompletionEvent, UniversityDatabase.
+    //
 public class Assignment1 {
 
     //Here all of the commands to create the database, read the input file,
@@ -24,8 +26,15 @@ public class Assignment1 {
         // set as the default.
         String inFileLocation = "/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt";
 
+
+        //Try and find the input file and throw an exception if it is not found
+        try {
+
+        } catch (FileNotFoundException ) {
+
+        }
         //File object to be used to read the input for the database from a text file
-        File inFile = new File("/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt");
+        File inFile = new File(inFileLocation);
 
         //Scanner that will be used to read the input from the file infile
         Scanner fileReader = new Scanner(inFile);
@@ -33,14 +42,14 @@ public class Assignment1 {
         //Instantiates a database object to store all of the University's students, courses, and completions
         UniversityDatabase mainDatabase = new UniversityDatabase();
 
-        //goes through and adds all of the objects from the input file to the database
+        //Goes through and adds all of the objects from the input file to the database
         fillDatabase(fileReader, mainDatabase);
 
         //TODO: start the user input method
 
     }
 
-    //this method will run the instructions for the interactive input for the user
+    //This method will run the instructions for the interactive input for the user
     private static void printInstructions() {
         System.out.print("Welcome to the CS-102 Student-Course Manager\n" +
                 "Current available commands:\n" +
