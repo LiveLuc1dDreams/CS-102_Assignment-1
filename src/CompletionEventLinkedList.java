@@ -56,7 +56,8 @@ class CompletionEventLinkedList {
         }
     }
 
-    public Object get( int i ) throws CompletionEventListException {
+    public CompletionEvent get( int i ) throws CompletionEventListException {
 
+        return ;
     }
 }
