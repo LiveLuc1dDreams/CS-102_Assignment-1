@@ -31,10 +31,18 @@ public class Student {
 
     //Adds a completion event to a student object's list
     public void addCompletionEvent(CompletionEvent completion) throws StudentException { //TODO: make the student exception classe to extend RunTimeException
-        //If the check returns not valid
-        //TODO: need to check that the course is for the correct student, ie the id of the student matches the id in the completionevent
-        this.studentCompletions.add(studentCompletions.size(), completion);
         //When the completion is added it will decide where to put it based upon the date
+        //TODO: need to check that the course is for the correct student, ie the id of the student matches the id in the completionevent
+        if ( completion.getStudentId().equals( this.getUniqueId() ) ) {
+            //Add "completion" tto the internal list of completion events.
+            this.studentCompletions.add(studentCompletions.size(), completion);
+
+        //If the check returns not valid throw an exception
+        } else {
+            throw new StudentException("StudentException");
+        }
+
+
     }
 
     //Setter methods for vars

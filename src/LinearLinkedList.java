@@ -8,7 +8,7 @@ import ProjectObjects.CompletionEvent;
 class LinearLinkedList {
 
 
-    private Node head; //TODO: need node class
+    private LinearLinkedNode head; //TODO: need node class
 
     //Default Constructor
     public LinearLinkedList() {
@@ -18,27 +18,35 @@ class LinearLinkedList {
     //Insertion preserving the sorting (by date, oldest first)
     public void add(CompletionEvent completionEvent) {
 
-        //Special case, list empty, standard insertion at first.
+        LinearLinkedNode newNode = new LinearLinkedNode( completionEvent );
+
+        //Special case 1, list empty, standard insertion at first.
         if ( head == null ) {
-            Node newNode = new Node(completionEvent);
             newNode.setNext(null);
             head = newNode;
         } else {
 
             //Find "curr" and "prev" to perform insertion. These are temp variables.
-            completionEvent curr = head;
-            completionEvent prev = null;
+            LinearLinkedNode curr = head;
+            LinearLinkedNode prev = null;
 
             //Update prev and curr according to the sorting
             //We only add a node to the list where there are no younger CompletionEvents than itself
             while ( ( curr != null) && curr.isOlder( completionEvent ) ) {
                 prev = curr;
-                curr = curr.getNext();
+                curr = (LinearLinkedNode) curr.getNext();
             }
 
-            Node newNode = new Node( completionEvent );
-            newNode.setNext( curr );
-            prev.setNext( newNode );
+            //Special case 2. Insertion at first with pre-existing node
+            if ( curr == head ) {
+                newNode.setNext( null );
+                prev.setNext( newNode );
+
+            //Standard case. Insertion in middle or last
+            } else {
+                newNode.setNext(curr);
+                prev.setNext(newNode);
+            }
         }
     }
 }

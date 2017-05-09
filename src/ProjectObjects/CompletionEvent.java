@@ -20,8 +20,11 @@ public class CompletionEvent{
         this.studentId = studentId;
     }
 
-    //Getter methods
+    public boolean isOlder( CompletionEvent completionEvent ) {
+        return isOlder(completionEvent); //Forward call to Date Class
+    }
 
+    //Getter methods
 
     public String getFinalGrade() {
         return finalGrade;
