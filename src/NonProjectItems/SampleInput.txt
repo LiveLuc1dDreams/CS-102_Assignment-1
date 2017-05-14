@@ -13,5 +13,5 @@ NOTES:
 
 Errors to look out for:
 
-Empty imput file name
+Empty input file name
 Incorrect input file name
