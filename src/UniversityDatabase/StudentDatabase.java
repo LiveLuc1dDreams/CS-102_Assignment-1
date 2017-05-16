@@ -21,7 +21,7 @@ class StudentDatabase {
     boolean addStudent(Student student) {
         try {
             students.add(students.size(), student);
-        } catch (ListException e) {
+        } catch (CompletionArrayBasedListException e) {
             return false;
         }
         return true;

@@ -4,7 +4,7 @@ package UniversityDatabase;
  * Created by brandon on 5/9/17.
  */
 
-public class Date {
+class Date {
 
     //Vars to store the
     private int years;

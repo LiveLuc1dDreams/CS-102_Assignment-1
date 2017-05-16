@@ -5,10 +5,10 @@ package UniversityDatabase;
  */
 
 //Sorted (by date, older first) reference base linked list of completion events.
-class CompletionEventLinkedList {
+class CompletionEventLinkedList implements CompletionEventLinkedListInterface{
 
 
-    private LinearLinkedNode head;
+    private CompletionEventLinearLinkedNode head;
 
     //Integer to keep track of the number of nodes in the list
     private int numNodes;
@@ -21,7 +21,7 @@ class CompletionEventLinkedList {
     //Insertion preserving the sorting (by date, oldest first)
     public void add(CompletionEvent completionEvent) {
 
-        LinearLinkedNode newNode = new LinearLinkedNode( completionEvent );
+        CompletionEventLinearLinkedNode newNode = new CompletionEventLinearLinkedNode( completionEvent );
 
         //Special case 1, list empty, standard insertion at first.
         if ( head == null ) {
@@ -31,14 +31,14 @@ class CompletionEventLinkedList {
         } else {
 
             //Find "curr" and "prev" to perform insertion. These are temp variables.
-            LinearLinkedNode curr = head;
-            LinearLinkedNode prev = null;
+            CompletionEventLinearLinkedNode curr = head;
+            CompletionEventLinearLinkedNode prev = null;
 
             //Update prev and curr according to the sorting
             //We only add a node to the list where there are no younger CompletionEvents than itself
             while ( ( curr != null) && curr.isOlder( completionEvent ) ) {
                 prev = curr;
-                curr = (LinearLinkedNode) curr.getNext();
+                curr = (CompletionEventLinearLinkedNode) curr.getNext();
             }
 
             //Special case 2. Insertion at first with pre-existing node

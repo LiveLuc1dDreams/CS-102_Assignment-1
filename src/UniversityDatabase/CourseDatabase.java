@@ -3,7 +3,7 @@ package UniversityDatabase;
 /**
  * Created by brandon on 4/11/17.
  */
-public class CourseDatabase {
+class CourseDatabase {
     private StudentDatabaseArrayBasedList courses = null;
 
     CourseDatabase() {
@@ -13,7 +13,7 @@ public class CourseDatabase {
     boolean addCourse(Course course) {
         try {
             courses.add(courses.size(), course);
-        } catch( ListException e ) {
+        } catch( CompletionArrayBasedListException e ) {
             return false;
         }
         return true;
@@ -22,7 +22,7 @@ public class CourseDatabase {
     public Course searchCourseById(String id) {
 
         //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the parameter id.
-        //If the id is not found then return exception.
+        //If the id is not found then throw an exception.
         try {
             for (int i = 0; i < courses.size(); i++) {
                 Course currCourse = (Course) courses.get(i);
@@ -31,8 +31,8 @@ public class CourseDatabase {
                     return currCourse;
                 }
             }
-        } catch (ListException e) {
-            throw new ListException("ListException id not found");
+        } catch (CompletionArrayBasedListException e) {
+            throw new CompletionArrayBasedListException("CompletionArrayBasedListException id not found");
         }
         return null;
     }

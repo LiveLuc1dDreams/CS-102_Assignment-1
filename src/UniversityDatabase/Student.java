@@ -8,7 +8,7 @@ package UniversityDatabase;
 //TODO: Add method to get the gpa
 //TODO: Have each letter grade = a gpa i.e. A = 4.0 etc
 
-public class Student {
+class Student {
     
     private String uniqueId;
     private String firstName;

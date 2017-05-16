@@ -3,18 +3,18 @@ package UniversityDatabase;
 /**
  * Created by brandon on 5/9/17.
  */
-public class LinearLinkedNode {
+class CompletionEventLinearLinkedNode {
 
     private Object item;
     private Object next;
 
     //Default constructor
-    public LinearLinkedNode() {
+    public CompletionEventLinearLinkedNode() {
         item = null;
         next = null;
     }
 
-    LinearLinkedNode( CompletionEvent object ) {
+    CompletionEventLinearLinkedNode(CompletionEvent object ) {
         item = object;
         next = null;
     }

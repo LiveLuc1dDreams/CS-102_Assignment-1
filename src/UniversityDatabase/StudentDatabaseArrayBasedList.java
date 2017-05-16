@@ -1,12 +1,10 @@
 package UniversityDatabase;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
 /**
  * Created by brandon on 4/11/17.
  */
 
-public class StudentDatabaseArrayBasedList implements ListInterface {
+class StudentDatabaseArrayBasedList implements CompletionArrayBasedListInterface {
 
     //Max physical size of the list
     private static final int MAX_LIST = 50;
@@ -46,11 +44,11 @@ public class StudentDatabaseArrayBasedList implements ListInterface {
     }
 
     //note the add function will overwrite items a the given index, so always add an item to the end
-    public void add( int index, Object item ) throws ListIndexOutOfBoundsException, ListException {
+    public void add( int index, Object item ) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException {
 
         if ( numItems >= MAX_LIST ) {
 
-            throw new ListException( "ListException on add.");
+            throw new CompletionArrayBasedListException( "CompletionArrayBasedListException on add.");
 
         }
 
@@ -60,22 +58,22 @@ public class StudentDatabaseArrayBasedList implements ListInterface {
             numItems++;
 
         } else {
-            throw new ListIndexOutOfBoundsException("ListIndexOutOfBounds on add. ");
+            throw new CompletionArrayBasedListIndexOutOfBoundsException("ListIndexOutOfBounds on add. ");
         }
     }
 
      //Retrieves a list item by position
-    public Object get( int i ) throws  ListIndexOutOfBoundsException {
+    public Object get( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException {
         if ( i >= 0 && i < numItems ) {
             return items[i];
         }
         else {
-            throw new ListIndexOutOfBoundsException("ListIndexOutOfBounds on Get");
+            throw new CompletionArrayBasedListIndexOutOfBoundsException("ListIndexOutOfBounds on Get");
         }
     }
 
     //Deletes an item from the list at a given position
-    public void remove( int i ) throws ListIndexOutOfBoundsException{
+    public void remove( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException {
         if ( i >= 0 && i < numItems ) {
 
             items[i] = null;
@@ -93,7 +91,7 @@ public class StudentDatabaseArrayBasedList implements ListInterface {
             numItems--;
         }
         else {
-            throw new ListIndexOutOfBoundsException("ListIndexOutOfBounds on Get");
+            throw new CompletionArrayBasedListIndexOutOfBoundsException("ListIndexOutOfBounds on Get");
         }
     }
 

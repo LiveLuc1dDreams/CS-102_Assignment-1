@@ -1,7 +1,7 @@
 package UniversityDatabase;
 
 // Interface providing the specifications for the CourseDatabase class.
-public interface CourseDatabaseInterface {
+interface CourseDatabaseInterface {
 
    // Adds a course to the database.
    // Note: Course class is package-private.

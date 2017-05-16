@@ -5,9 +5,9 @@ package UniversityDatabase;
  */
 
 //Exception used when the array storing the list becomes full
-class ListException extends RuntimeException {
+class CompletionArrayBasedListException extends RuntimeException {
 
-    ListException( String s ) {
+    CompletionArrayBasedListException(String s ) {
 
         super( s );
 

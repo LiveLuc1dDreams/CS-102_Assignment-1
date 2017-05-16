@@ -1,7 +1,7 @@
 package UniversityDatabase;
 
 // Interface providing the specifications for the UniversityDatabase class.
-public interface UniversityDatabaseInterface {
+interface UniversityDatabaseInterface {
 
    // Load database from file, adding the new data to current database.
    // fileName: file name of the input database file.
