@@ -15,7 +15,7 @@ public interface CourseDatabaseDoubleLinkedCircularListInterface {
     void removeAll();
 
     //Adds an item to the list at position index
-    void add(int i, Object o) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException;
+    void add(int i, CompletionEvent c) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException;
 
     //Retrieves a list item by position.
     Object get( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException;

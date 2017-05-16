@@ -5,8 +5,8 @@ package UniversityDatabase;
  */
 class CompletionEventLinearLinkedNode {
 
-    private Object item;
-    private Object next;
+    private CompletionEvent item;
+    private CompletionEvent next;
 
     //Default constructor
     public CompletionEventLinearLinkedNode() {
@@ -14,27 +14,25 @@ class CompletionEventLinearLinkedNode {
         next = null;
     }
 
-    CompletionEventLinearLinkedNode(CompletionEvent object ) {
-        item = object;
+    CompletionEventLinearLinkedNode(CompletionEvent completionEvent ) {
+        item = completionEvent;
         next = null;
-    }
-
-    public boolean isOlder( Object object ) {
-        //Compare the dates of this "this.item"
-
-        return true;
     }
 
     Object getNext() {
         return next;
     }
 
-    void setNext(Object next) {
+    void setNext(CompletionEvent next) {
         this.next = next;
     }
 
     boolean isOlder( CompletionEvent completionEvent ){
         return false; //Forward this call to the CompletionEvent class.
+    }
+
+    public CompletionEvent getItem() {
+        return item;
     }
 }
 

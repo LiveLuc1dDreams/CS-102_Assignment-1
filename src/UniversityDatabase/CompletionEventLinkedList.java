@@ -57,8 +57,14 @@ class CompletionEventLinkedList implements CompletionEventLinkedListInterface{
         }
     }
 
-    public CompletionEvent get( int i ) throws CompletionEventListException {
+    public CompletionEvent get( int index ) throws CompletionEventListException {
 
-        return null;
+        if( ( index >= 0 ) && ( index < numNodes ) ) {
+            // Get the reference to the node, and then return the node data.
+            CompletionEventLinearLinkedNode curr = searchCompletion( index );
+            return curr.getItem(); }
+        else {
+            throw new ListIndexOutOfBoundsException( "List index out of bounds on get!" ); }
+
     }
 }
