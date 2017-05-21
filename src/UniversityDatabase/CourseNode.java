@@ -11,7 +11,7 @@ class CourseNode {
 
 
     //Default constructor
-    public CourseNode(Course c) {
+    public CourseNode() {
         item = null;
         next = null;
     }

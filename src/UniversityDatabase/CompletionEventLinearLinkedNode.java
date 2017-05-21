@@ -6,24 +6,25 @@ package UniversityDatabase;
 class CompletionEventLinearLinkedNode {
 
     private CompletionEvent item;
-    private CompletionEvent next;
+    CompletionEventLinearLinkedNode next;
 
     //Default constructor
-    public CompletionEventLinearLinkedNode() {
-        item = null;
+    public CompletionEventLinearLinkedNode(CompletionEvent item, CompletionEventLinearLinkedNode head) {
+        this.item = null;
         next = null;
     }
 
+    //Alternate Default Constructor
     CompletionEventLinearLinkedNode(CompletionEvent completionEvent ) {
         item = completionEvent;
         next = null;
     }
 
-    Object getNext() {
-        return next;
+    CompletionEventLinearLinkedNode getNext() {
+        return this.next;
     }
 
-    void setNext(CompletionEvent next) {
+    void setNext(CompletionEventLinearLinkedNode next) {
         this.next = next;
     }
 
