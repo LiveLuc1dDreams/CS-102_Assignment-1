@@ -5,25 +5,24 @@ package UniversityDatabase;
  */
 public class CourseDatabaseDoubleLinkedCircularList implements CourseDatabaseDoubleLinkedCircularListInterface {
 
+    int numNodes = 0;
+    private CourseNode head;
+
     public boolean isEmpty() {
         return false;
     }
 
-
     public int size() {
-        return 0;
+        return numNodes;
     }
-
 
     public void removeAll() {
 
     }
 
+    public void add(int i, Course course) throws CompletionArrayBasedListException {
 
-    @Override
-    public void add(int i, Course c) throws UniversityDatabase.CompletionArrayBasedListException, CompletionArrayBasedListException {
-
-        CourseNode newNode = new CourseNode( c );
+        CourseNode newNode = new CourseNode( course );
         //Special case: list 1 is empty. Standard insertion at first.
         if ( this.getHead() == null ) {
             head = newNode;
@@ -38,7 +37,7 @@ public class CourseDatabaseDoubleLinkedCircularList implements CourseDatabaseDou
                 CourseNode prev = head.getPrev();
                 int currIndex = 1;
                 //Update curr and prev accordingly to the sorting.
-                while ( ( currIndex <= numNodes ) && curr.isLessThan( c ) ) {
+                while ( ( currIndex <= numNodes ) && curr.isLessThan( course ) ) {
                     //Update curr and prev.
                     prev = curr;
                     curr = curr.getNext();
@@ -51,18 +50,19 @@ public class CourseDatabaseDoubleLinkedCircularList implements CourseDatabaseDou
                 }
             }
         }
-
-
-
     }
 
 
-    public Object get(int i) throws UniversityDatabase.CompletionArrayBasedListException {
+    public Object get(int i) throws CompletionArrayBasedListException {
         return null;
     }
 
 
-    public void remove(int i) throws UniversityDatabase.CompletionArrayBasedListException {
+    public void remove(int i) throws CompletionArrayBasedListException {
 
+    }
+
+    public Object getHead() {
+        return this.head;
     }
 }

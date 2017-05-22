@@ -32,4 +32,17 @@ class CourseNode {
     void setNext(CourseNode next) {
         this.next = next;
     }
+
+    public void setPrev(CourseNode prev) {
+        this.prev = prev;
+    }
+
+    public CourseNode getPrev() {
+        return this.prev;
+    }
+
+    public boolean isLessThan(Course course) {
+        return true;
+    }
+
 }

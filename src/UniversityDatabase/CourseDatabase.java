@@ -4,10 +4,10 @@ package UniversityDatabase;
  * Created by brandon on 4/11/17.
  */
 class CourseDatabase {
-    private StudentDatabaseArrayBasedList courses = null;
+    private CompletionEventLinkedList courses = null;
 
     CourseDatabase() {
-        courses = new StudentDatabaseArrayBasedList();
+        courses = new CompletionEventLinkedList();
     }
 
     boolean addCourse(Course course) {
