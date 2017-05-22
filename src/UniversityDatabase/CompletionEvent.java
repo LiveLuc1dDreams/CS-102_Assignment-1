@@ -21,7 +21,7 @@ public class CompletionEvent{
         this.studentId = studentId;
     }
 
-    private boolean isOlder( CompletionEvent completionEvent ) {
+    boolean isOlder(CompletionEvent completionEvent) {
         return this.date.isOlder( completionEvent ); //Forward call to Date Class
     }
 

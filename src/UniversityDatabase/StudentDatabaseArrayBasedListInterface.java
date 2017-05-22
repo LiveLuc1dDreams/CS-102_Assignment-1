@@ -1,11 +1,10 @@
 package UniversityDatabase;
 
 /**
- * Created by brandon on 4/14/17.
+ * Created by brandon on 5/21/17.
  */
 
-interface CompletionArrayBasedListInterface {
-
+interface StudentDatabaseArrayBasedListInterface {
     //Determines if the list is empty
     boolean isEmpty();
 
@@ -16,13 +15,13 @@ interface CompletionArrayBasedListInterface {
     void removeAll();
 
     //Adds an item to the list at position index
-    void add(int i, Object o) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException;
+    void add(int i, Student student) throws CompletionArrayBasedListException, CompletionArrayBasedListException;
 
     //Retrieves a list item by position.
-    Object get( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException;
+    Object get( int i ) throws CompletionArrayBasedListException;
 
     //Deletes an item from the list at a given position.
-    void remove( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException;
+    void remove( int i ) throws CompletionArrayBasedListException;
 
     //Changes the size of the array to a larger capacity.
     void resize() throws CompletionArrayBasedListException;

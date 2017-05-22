@@ -15,11 +15,11 @@ public interface CourseDatabaseDoubleLinkedCircularListInterface {
     void removeAll();
 
     //Adds an item to the list at position index
-    void add(int i, CompletionEvent c) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException;
+    void add(int i, CompletionEvent c) throws UniversityDatabase.CompletionArrayBasedListException, CompletionArrayBasedListException;
 
     //Retrieves a list item by position.
-    Object get( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException;
+    Object get( int i ) throws UniversityDatabase.CompletionArrayBasedListException;
 
     //Deletes an item from the list at a given position.
-    void remove( int i ) throws CompletionArrayBasedListIndexOutOfBoundsException;
+    void remove( int i ) throws UniversityDatabase.CompletionArrayBasedListException;
 }

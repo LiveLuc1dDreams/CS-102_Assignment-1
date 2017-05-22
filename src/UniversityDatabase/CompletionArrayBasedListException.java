@@ -1,16 +1,11 @@
 package UniversityDatabase;
 
 /**
- * Created by brandon on 4/14/17.
+ * Created by brandon on 5/21/17.
  */
+class CompletionArrayBasedListException extends Exception {
 
-//Exception used when the array storing the list becomes full
-class CompletionArrayBasedListException extends RuntimeException {
-
-    CompletionArrayBasedListException(String s ) {
-
-        super( s );
-
+    CompletionArrayBasedListException(String message) {
+        super(message);
     }
-
 }

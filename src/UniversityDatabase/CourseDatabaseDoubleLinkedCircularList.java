@@ -21,7 +21,7 @@ public class CourseDatabaseDoubleLinkedCircularList implements CourseDatabaseDou
 
 
     @Override
-    public void add(int i, Course c) throws CompletionArrayBasedListIndexOutOfBoundsException, CompletionArrayBasedListException {
+    public void add(int i, Course c) throws UniversityDatabase.CompletionArrayBasedListException, CompletionArrayBasedListException {
 
         CourseNode newNode = new CourseNode( c );
         //Special case: list 1 is empty. Standard insertion at first.
@@ -57,12 +57,12 @@ public class CourseDatabaseDoubleLinkedCircularList implements CourseDatabaseDou
     }
 
 
-    public Object get(int i) throws CompletionArrayBasedListIndexOutOfBoundsException {
+    public Object get(int i) throws UniversityDatabase.CompletionArrayBasedListException {
         return null;
     }
 
 
-    public void remove(int i) throws CompletionArrayBasedListIndexOutOfBoundsException {
+    public void remove(int i) throws UniversityDatabase.CompletionArrayBasedListException {
 
     }
 }

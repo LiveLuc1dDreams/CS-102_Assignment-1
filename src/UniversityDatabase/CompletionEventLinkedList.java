@@ -21,20 +21,21 @@ class CompletionEventLinkedList implements CompletionEventLinkedListInterface {
         head = null;
     }
 
-    //Constructor
+    //Alternate Default Constructor
     public CompletionEventLinkedList(CompletionEvent completionEvent, CompletionEventLinearLinkedNode head) {
         this.head = head;
         this.item = completionEvent;
     }
 
     @Override
-    //Returns true if the list is empty
+    //Returns true if the list is empty.
     public boolean isEmpty() {
         return ( numItems == 0 );
     }
 
-    //Insertion preserving the sorting (by date, oldest first)
+
     @Override
+    //Insertion preserving the sorting (by date, oldest first).
     public void add(CompletionEvent completionEvent) {
 
         CompletionEventLinearLinkedNode newNode = new CompletionEventLinearLinkedNode( completionEvent );
@@ -74,11 +75,13 @@ class CompletionEventLinkedList implements CompletionEventLinkedListInterface {
     }
 
     @Override
+    //Returns the size of the list.
     public int size() {
         return numItems;
     }
 
     @Override
+    //Removes all of the items in the list by de-referencing the first node of the list (head).
     public void removeAll(int index) throws CompletionEventListException {
 
         //Set the head to null and put all references in list up for garbage collection
@@ -103,15 +106,16 @@ class CompletionEventLinkedList implements CompletionEventLinkedListInterface {
     }
 
     @Override
-    public void add(int index, Object item) throws CompletionEventListException {
+
+    public void add(int index, CompletionEvent item) throws CompletionEventListException {
         if( ( index >= 0 ) && ( index < ( numItems + 1 ) ) ) {
             if( index == 0 ) {
-            // Insert node at the beginning of the list.
+                // Insert node at the beginning of the list.
                 CompletionEventLinearLinkedNode newNode = new CompletionEventLinearLinkedNode( item, head );
                 head = newNode; }
             else {
                 CompletionEventLinearLinkedNode prev = searchCompletion( index - 1 );
-            // Insert node after the node referenced by prev.
+                // Insert node after the node referenced by prev.
                 CompletionEventLinearLinkedNode newNode = new CompletionEventLinearLinkedNode( item, prev.next );
                 prev.next = newNode; }
             numItems++; }

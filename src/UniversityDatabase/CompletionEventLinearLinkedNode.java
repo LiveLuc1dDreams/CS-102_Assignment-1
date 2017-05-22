@@ -9,7 +9,7 @@ class CompletionEventLinearLinkedNode {
     CompletionEventLinearLinkedNode next;
 
     //Default constructor
-    public CompletionEventLinearLinkedNode(CompletionEvent item, CompletionEventLinearLinkedNode head) {
+    CompletionEventLinearLinkedNode(CompletionEvent item, CompletionEventLinearLinkedNode head) {
         this.item = null;
         next = null;
     }
@@ -29,10 +29,12 @@ class CompletionEventLinearLinkedNode {
     }
 
     boolean isOlder( CompletionEvent completionEvent ){
-        return false; //Forward this call to the CompletionEvent class.
+
+        //Forward this call to the CompletionEvent class.
+        return this.getItem().isOlder( completionEvent );
     }
 
-    public CompletionEvent getItem() {
+    CompletionEvent getItem() {
         return item;
     }
 }
