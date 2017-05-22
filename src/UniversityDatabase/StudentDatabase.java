@@ -34,7 +34,12 @@ class StudentDatabase {
         for (int i = 0; i < students.size(); i++) {
 
             //Set temporary variable currStudent to the student that is at the current index that the loop is at.
-            Student currStudent = (Student) students.get(i);
+            Student currStudent = null;
+            try {
+                currStudent = (Student) students.get(i);
+            } catch (UniversityDatabase.CompletionArrayBasedListException completionArrayBasedListException) {
+                completionArrayBasedListException.printStackTrace();
+            }
 
             //Check if this student is the one that is has the same id as the one being searched for.
             if (currStudent.getUniqueId().equals(id)) {

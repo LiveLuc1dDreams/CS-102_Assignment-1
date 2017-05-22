@@ -62,7 +62,7 @@ class StudentDatabaseArrayBasedList implements StudentDatabaseArrayBasedListInte
     }
 
     //Retrieves a list item by position
-    public Student get(int i) throws UniversityDatabase.CompletionArrayBasedListException {
+    public UniversityDatabase.Course get(int i) throws UniversityDatabase.CompletionArrayBasedListException {
         if (i >= 0 && i < getNumItems()) {
             return items[i];
         } else {

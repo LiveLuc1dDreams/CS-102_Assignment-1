@@ -25,14 +25,14 @@ class CourseDatabase {
         //If the id is not found then throw an exception.
         try {
             for (int i = 0; i < courses.size(); i++) {
-                Course currCourse = (Course) courses.get(i);
+                Course currCourse =  courses.get(i);
 
                 if ( currCourse.getUniqueId().equals(id) ) {
                     return currCourse;
                 }
             }
-        } catch (CompletionArrayBasedListException e) {
-            throw new CompletionArrayBasedListException("CompletionArrayBasedListException id not found");
+        } catch (CompletionArrayBasedListException completionArrayBasedListException) {
+
         }
         return null;
     }
