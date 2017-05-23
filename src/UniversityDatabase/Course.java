@@ -1,15 +1,23 @@
 package UniversityDatabase;
 
+import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
+import org.omg.CORBA.COMM_FAILURE;
+
+import java.util.Vector;
+
 /**
  * Created by brandon on 4/8/17.
  * This class implements the Course object that will be used in the University database
  */
-public class Course {
+class Course {
 
     private String course;
     private String credits;
     private String uniqueId;
     private String name;
+
+    //Vector list to store completion events
+    private Vector<CompletionEvent> courseCompletions;
 
     //Course object constructor
 
@@ -19,12 +27,19 @@ public class Course {
         this.name = name;
     }
 
+    //Allows the addition of a completion event to the list
+    void addCompletion(CompletionEvent completionEvent) {
+
+        //TODO: need to have this add be sorted by date
+        this.courseCompletions.add(completionEvent);
+    }
+
     //Getter methods
-    public String getCourse() {
+    String getCourse() {
         return course;
     }
 
-    public String getCredits() {
+    String getCredits() {
         return credits;
     }
 
@@ -32,25 +47,26 @@ public class Course {
         return uniqueId;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
     //Setter methods
 
-    public void setCourse(String course) {
+    void setCourse(String course) {
         this.course = course;
     }
 
-    public void setCredits(String credits) {
+    void setCredits(String credits) {
         this.credits = credits;
     }
 
-    public void setUniqueId(String uniqueId) {
+    void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 }
+

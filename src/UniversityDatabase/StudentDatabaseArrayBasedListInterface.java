@@ -18,7 +18,7 @@ interface StudentDatabaseArrayBasedListInterface {
     void add(int i, Student student) throws CompletionArrayBasedListException, CompletionArrayBasedListException;
 
     //Retrieves a list item by position.
-    UniversityDatabase.Course get(int i ) throws UniversityDatabase.CompletionArrayBasedListException;
+    Course get(int i ) throws CompletionArrayBasedListException;
 
     //Deletes an item from the list at a given position.
     void remove( int i ) throws CompletionArrayBasedListException;

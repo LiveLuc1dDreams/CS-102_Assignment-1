@@ -1,5 +1,7 @@
 package UniversityDatabase;
 
+import java.util.ArrayList;
+
 /**
  * Created by brandon on 4/8/17.
  * This class implements the Student object that will be used in the University database
@@ -9,25 +11,24 @@ package UniversityDatabase;
 //TODO: Have each letter grade = a gpa i.e. A = 4.0 etc
 
 class Student {
-    
+
+    //Members to store various data relating to students
     private String uniqueId;
     private String firstName;
     private String lastName;
     private String birthyear;
     private String country;
 
-    private StudentDatabaseArrayBasedList studentCompletions = null;
+    //ArrayList to store the completions
+    private ArrayList<CompletionEvent> studentCompletions = null;
 
     //Student object constructor
-
     Student(String uniqueId, String firstName, String lastName, String birthyear, String country) {
         this.uniqueId = uniqueId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthyear = birthyear;
         this.country = country;
-
-        this.studentCompletions = new StudentDatabaseArrayBasedList();
     }
 
     //Adds a completion event to a student object's list
@@ -36,7 +37,7 @@ class Student {
         //When the completion is added it will decide where to put it based upon the date
         if ( completion.getStudentId().equals( this.getUniqueId() ) ) {
 
-            //Add "completion" tto the internal list of completion events.
+            //Add "completion" to the internal list of completion events.
             this.studentCompletions.add(studentCompletions.size(), completion);
 
         //If the check returns not valid throw an exception
@@ -44,8 +45,6 @@ class Student {
 
             throw new StudentException("StudentException");
         }
-
-
     }
 
     //Setter methods for vars
