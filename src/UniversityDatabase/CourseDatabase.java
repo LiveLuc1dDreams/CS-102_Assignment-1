@@ -1,47 +1,53 @@
 package UniversityDatabase;
 
+import java.util.ArrayList;
+
 /**
  * Created by brandon on 4/11/17.
  */
-class CourseDatabase {
-    private CompletionEventLinkedList courses = null;
+class CourseDatabase implements CourseDatabaseInterface{
+    private ArrayList<Course> courses = null;
 
     CourseDatabase() {
-        courses = new CompletionEventLinkedList();
+        this.courses = new ArrayList<Course>();
     }
 
-    boolean addCourse(Course course) {
-        try {
-            courses.add(courses.size(), course);
-        } catch( CompletionArrayBasedListException e ) {
-            return false;
-        }
-        return true;
+    void addCourse(Course course) {
+        courses.add(courses.size(), course);
     }
 
     public Course searchCourseById(String id) {
 
         //Search in the arraybasedlist from index 0 to size - 1, get all items and check if their ID matches the parameter id.
         //If the id is not found then throw an exception.
-        try {
-            for (int i = 0; i < courses.size(); i++) {
-                Course currCourse =  courses.get(i);
+        for (int i = 0; i < courses.size(); i++) {
+            Course currCourse =  courses.get(i);
 
-                if ( currCourse.getUniqueId().equals(id) ) {
-                    return currCourse;
-                }
+            if ( currCourse.getUniqueId().equals(id) ) {
+                return currCourse;
             }
-        } catch (CompletionArrayBasedListException completionArrayBasedListException) {
-
         }
         return null;
     }
 
     void removeAll() {
-        this.courses.removeAll();
+        this.courses.clear();
     }
 
+    int getSize() {
+        return this.courses.size();
+    }
 
+    @Override
+    public void addCourse(String id, String name, int credits) throws CourseDatabaseException {
 
+    }
 
+    @Override
+    public Course getCourse(String id) throws CourseDatabaseException {
+        return null;
+    }
+
+    public void printAllCourses() {
+    }
 }

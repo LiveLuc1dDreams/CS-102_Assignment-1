@@ -38,7 +38,6 @@ import java.util.Scanner;
 //TODO: Need an assigment2 class with a main method, performs all the operations requested by the user, never accesses the members of the other classes
 //TODO: All classes except Assignment2 should be in the package UniversityDatabase and all classes are package private, except UniversityDatabase which is public.
 //TODO: UniversityDatabase, CourseDatabase, StudentDatabase should have interfaces UniversityDatabaseInterface, etc...
-//TODO: Duplicate items need to be handled
 
 public class Assignment2 {
 
@@ -51,7 +50,6 @@ public class Assignment2 {
         //The location "/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt" is what I have
         // set as the default.
         String inFileLocation = "/home/brandon/IdeaProjects/CS-102 Assignment-1/src/NonProjectItems/Input.txt";
-
 
         //Try and find the input file and throw an exception if it is not found
         try {
@@ -68,7 +66,8 @@ public class Assignment2 {
             //Goes through and adds all of the objects from the input file to the database
             fillDatabase(fileReader, mainDatabase);
 
-            //TODO: start the user input method
+            //Prompt the user input method
+
 
 
         } catch (FileNotFoundException e) {
@@ -96,7 +95,7 @@ public class Assignment2 {
 
     }
 
-    //This method will be used to add all the items found in the input file to the database
+    //This method will be used to add all the items found in the input file to the database.
     private static void fillDatabase(Scanner inFile, UniversityDatabase mainDatabase) {
 
         //While the input file has another line go through all of the lines in the input file and
@@ -112,20 +111,14 @@ public class Assignment2 {
 
                 //"STUDENT" was found at the beginning of the input line and a student object will be made.
                 case "STUDENT":
-
-
                     mainDatabase.addStudent(currLine);
                     break;
 
                 case "COMPLETION":
-
-
                     mainDatabase.addCompletionEvent(currLine);
                     break;
 
                 case "COURSE":
-
-
                     mainDatabase.addCourse(currLine);
                     break;
             }
@@ -133,11 +126,15 @@ public class Assignment2 {
     }
 
     //Prompts the user input and returns what the user said
-    private static void promptInput() {
-        //Scanner that will take the user input from the interactive input
+    private static int promptInput() {
+
+        //Scanner that will take the user input from the interactive input.
         Scanner commandSelection = new Scanner(System.in);
 
-        //When the user for the user to select the command option
+        //Prompt the user input and assign it to a variable choice.
+        int choice = Integer.parseInt(commandSelection.next());
 
+        //Return the user inputted selection.
+        return choice;
     }
 }

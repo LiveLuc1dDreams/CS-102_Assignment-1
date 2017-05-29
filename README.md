@@ -18,5 +18,10 @@ the completion event will not be added to the database, and the function to add 
 
 #Info to add to the readme:
 Choices for the lists implemented in Course and Student classes:
-Courses: VectorList, Reason: Need to add many courses, so I want the adding process to not take too long, and also I do not want each completion to save on memory. By using the vector class the memory the array wastes is also saved due to its resizability. This implementation is better than a reference based list because a reference based list is slower to access each item and takes up more space for each item, which would be cumbersome. 
-Students: ArrayList, Reason: Only need to add a few completions to each student so we can make a small array and only waste a little bit of space while making each of the items easy to access and take up a less memory than reference based list.  
+Courses: ArrayList, Reason: Need to add many courses, so I want the adding process to not take too long, and also I do not want each completion to save on memory. By using the vector class the memory the array wastes is also saved due to its resizability. This implementation is better than a reference based list because a reference based list is slower to access each item and takes up more space for each item, which would be cumbersome. 
+Students: ArrayList, Reason: Only need to add a few completions to each student so we can make a small array and only waste a little bit of space while making each of the items easy to access and take up a less memory than reference based list.
+For adding objects to the database: if there is a duplicate object then the newest version of the duplicate object will overwrite the current version of the object in the database. 
+Input file format:
+ Student: STUDENT/student id/first name/last name/birthyear/birth-country
+ Course: COURSE/course id/course title/course credits
+ Completion: COMPLETION/student id/course it/grade/date of completion

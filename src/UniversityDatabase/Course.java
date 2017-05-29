@@ -3,6 +3,7 @@ package UniversityDatabase;
 import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
 import org.omg.CORBA.COMM_FAILURE;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -17,7 +18,7 @@ class Course {
     private String name;
 
     //Vector list to store completion events
-    private Vector<CompletionEvent> courseCompletions;
+    private ArrayList<CompletionEvent> courseCompletions;
 
     //Course object constructor
 
@@ -28,10 +29,19 @@ class Course {
     }
 
     //Allows the addition of a completion event to the list
-    void addCompletion(CompletionEvent completionEvent) {
+    void addCompletionEvent(CompletionEvent completionEvent) {
 
-        //TODO: need to have this add be sorted by date
-        this.courseCompletions.add(completionEvent);
+        //When the completion is added it will decide where to put it based upon the date
+        if ( completionEvent.getStudentId().equals( this.getUniqueId() ) ) {
+
+            //Add "completion" to the internal list of completion events.
+            this.courseCompletions.add(courseCompletions.size(), completionEvent);
+
+            //If the check returns not valid throw an exception
+        } else {
+            throw new StudentException("StudentException");
+        }
+
     }
 
     //Getter methods

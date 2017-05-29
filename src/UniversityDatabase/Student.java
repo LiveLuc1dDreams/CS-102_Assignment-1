@@ -23,7 +23,7 @@ class Student {
     private ArrayList<CompletionEvent> studentCompletions = null;
 
     //Student object constructor
-    Student(String uniqueId, String firstName, String lastName, String birthyear, String country) {
+    Student(String uniqueId, String firstName, String lastName, int birthyear, String country) {
         this.uniqueId = uniqueId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,7 +42,6 @@ class Student {
 
         //If the check returns not valid throw an exception
         } else {
-
             throw new StudentException("StudentException");
         }
     }
@@ -92,9 +91,8 @@ class Student {
     }
 
     public int getGPA() {
-        int GPA = -1; 
+        int GPA = -1;
 
-        
         return GPA; //TODO: make this a calculation based upon studentCompletions
         //TODO: Take the average gpa of all the courses a student has completed and divide by the number of courses
     }

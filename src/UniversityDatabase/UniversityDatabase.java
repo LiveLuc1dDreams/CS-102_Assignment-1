@@ -5,7 +5,7 @@ package UniversityDatabase;
  * This class implements methods to search for student and course objects from their respective arrays, which are also created in this class
  **
  */
-public class UniversityDatabase {
+public class UniversityDatabase implements UniversityDatabaseInterface{
 
     private StudentDatabase students = null;
     private CourseDatabase courses = null;
@@ -16,8 +16,8 @@ public class UniversityDatabase {
         courses = new CourseDatabase();
     }
 
-    public boolean addCourse(Course course) {
-        return courses.addCourse(course);
+    public void addCourse(Course course) {
+        courses.addCourse(course);
     }
 
     //recursive method to search for a Student object
@@ -86,6 +86,48 @@ public class UniversityDatabase {
         return index;
     }
 
+    @Override
+    public void loadFromFile(String fileName) throws UniversityDatabaseException {
+
+    }
+
+    @Override
+    public void printAllStudents() throws UniversityDatabaseException {
+        this.students.printAllStudents();
+    }
+
+    @Override
+    public void printAllCourses() throws UniversityDatabaseException {
+        this.courses.printAllCourses();
+    }
+
+    @Override
+    public void printAllCoursesOfAStudent(String studentId) throws UniversityDatabaseException {
+
+    }
+
+    @Override
+    public void printAllStudentsOfACourse(String courseId) throws UniversityDatabaseException {
+
+    }
+
+    @Override
+    public void addStudent(String id, String firstName, String lastName, int yearBirth, String country) throws UniversityDatabaseException {
+
+        //Forward this call to the student database
+        this.students.addStudent(id, firstName, lastName, yearBirth, country);
+    }
+
+    @Override
+    public void addCourse(String id, String name, int credits) {
+
+    }
+
+    @Override
+    public void addCompletionEvent(String studentId, String courseId, float grade, int dateYears, int dateMonths, int dateDays) {
+
+    }
+
     //Converts a grade in letter-format int a grade in number-format
     //Note: client-code doesn't need a database instance to call this
     //Note: call this function using UniversityDatabase.gradeToFloat( "B+" );
@@ -103,14 +145,12 @@ public class UniversityDatabase {
 
     public void addStudent(String currLine) {
 
-        //
-        Student student = new Student( currLine.split("/")[1],
+        //Forward the adding of student to the student database.
+        this.students.addStudent( currLine.split("/")[1],
                 currLine.split("/")[2],
                 currLine.split("/")[3],
-                currLine.split("/")[4],
-                currLine.split("/")[5] );
-
-        this.students.addStudent(student);
+                Integer.parseInt( currLine.split("/")[4] ),
+                currLine.split("/")[5]);
     }
 
     public void addCourse(String currLine) {
