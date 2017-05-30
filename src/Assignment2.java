@@ -3,6 +3,7 @@ import UniversityDatabase.UniversityDatabaseException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import UniversityDatabase.Date;
 import java.util.Scanner;
 
 /**
@@ -111,15 +112,30 @@ public class Assignment2 {
 
                 //"STUDENT" was found at the beginning of the input line and a student object will be made.
                 case "STUDENT":
-                    mainDatabase.addStudent(currLine);
+                    mainDatabase.addStudent(currLine.split( "/" )[1],
+                            currLine.split( "/" )[1],
+                            currLine.split( "/" )[2],
+                            Integer.parseInt( currLine.split( "/" )[3] ),
+                            currLine.split( "/" )[4]);
                     break;
 
                 case "COMPLETION":
-                    mainDatabase.addCompletionEvent(currLine);
+
+                    //Create a data object from the input to be used in the completion event object constructor.
+                    Date newDate = new Date(currLine.split( "/" )[4]);
+
+                    mainDatabase.addCompletionEvent( currLine.split( "/" )[1],
+                            currLine.split( "/" )[2],
+                            Integer.parseInt( currLine.split( "/" )[3]),
+                            newDate.getYears(),
+                            newDate.getMonths(),
+                            newDate.getDays() );
                     break;
 
                 case "COURSE":
-                    mainDatabase.addCourse(currLine);
+                    mainDatabase.addCourse(currLine.split( "/" )[1],
+                            currLine.split( "/" )[2],
+                            Integer.parseInt( currLine.split( "/" )[3] ) );
                     break;
             }
         }

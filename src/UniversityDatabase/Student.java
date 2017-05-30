@@ -60,7 +60,7 @@ class Student {
         this.lastName = lastName;
     }
 
-    public void setBirthyear(String birthyear) {
+    public void setBirthyear(int birthyear) {
         this.birthyear = birthyear;
     }
 
@@ -82,7 +82,7 @@ class Student {
         return lastName;
     }
 
-    public String getBirthyear() {
+    public int getBirthyear() {
         return birthyear;
     }
 

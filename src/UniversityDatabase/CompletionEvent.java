@@ -25,12 +25,12 @@ public class CompletionEvent{
 
     }
 
+    //Method used in the comparison of completion events by date.
     boolean isOlder(CompletionEvent completionEvent) {
         return this.date.isOlder( completionEvent ); //Forward call to Date Class
     }
 
-
-    //toString method to print out the completion event
+    //toString method to print out the completion event in a readable format.
     public String toString() {
         return finalGrade +
                 "\n" + Integer.toString( date.getDays() ) + " " +
@@ -41,8 +41,7 @@ public class CompletionEvent{
     }
 
     //Getter methods
-
-    public String getFinalGrade() {
+    public Float getFinalGrade() {
         return finalGrade;
     }
 
@@ -50,7 +49,7 @@ public class CompletionEvent{
         return courseId;
     }
 
-    String getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
@@ -59,20 +58,19 @@ public class CompletionEvent{
     }
 
     //Setter methods
-
-    public void setFinalGrade(String finalGrade) {
+    private void setFinalGrade(Float finalGrade) {
         this.finalGrade = finalGrade;
     }
 
-    public void setCourseId(String courseId) {
+    void setCourseId(String courseId) {
         this.courseId =  courseId;
     }
 
-    public void setStudentId(String studentId) {
+    private void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-    public void setDate(Date date) {
+    private void setDate(Date date) {
         this.date = date;
     }
 }

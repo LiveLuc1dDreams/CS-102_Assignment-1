@@ -24,4 +24,4 @@ For adding objects to the database: if there is a duplicate object then the newe
 Input file format:
  Student: STUDENT/student id/first name/last name/birthyear/birth-country
  Course: COURSE/course id/course title/course credits
- Completion: COMPLETION/student id/course it/grade/date of completion
+ Completion: COMPLETION/student id/course id/grade/date of completion
