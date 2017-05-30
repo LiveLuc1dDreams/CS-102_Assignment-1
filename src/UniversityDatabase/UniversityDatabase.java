@@ -7,17 +7,13 @@ package UniversityDatabase;
  */
 public class UniversityDatabase implements UniversityDatabaseInterface{
 
-    private StudentDatabase students = null;
-    private CourseDatabase courses = null;
+    private StudentDatabase studentDatabase = null;
+    private CourseDatabase courseDatabase = null;
 
     //Default constructor
     public UniversityDatabase() {
-        students = new StudentDatabase();
-        courses = new CourseDatabase();
-    }
-
-    public void addCourse(Course course) {
-        courses.addCourse(course);
+        studentDatabase = new StudentDatabase();
+        courseDatabase = new CourseDatabase();
     }
 
     //recursive method to search for a Student object
@@ -93,34 +89,35 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
 
     @Override
     public void printAllStudents() throws UniversityDatabaseException {
-        this.students.printAllStudents();
+        this.studentDatabase.printAllStudents();
     }
 
     @Override
     public void printAllCourses() throws UniversityDatabaseException {
-        this.courses.printAllCourses();
+        this.courseDatabase.printAllCourses();
     }
 
     @Override
     public void printAllCoursesOfAStudent(String studentId) throws UniversityDatabaseException {
-        this.students.getStudent( studentId ).getStudentCompletions().toString();
+        this.studentDatabase.getStudent( studentId ).getStudentCompletions().toString();
     }
 
     @Override
     public void printAllStudentsOfACourse(String courseId) throws UniversityDatabaseException {
-        this.courses.getCourse( courseId ).getCourseCompletions().toString();
+        //Find the course specified in the database and
+        this.courseDatabase.getCourse( courseId ).getCourseCompletions().toString();
     }
 
     @Override
     public void addStudent(String id, String firstName, String lastName, int yearBirth, String country) throws UniversityDatabaseException {
 
         //Forward this call to the student database
-        this.students.addStudent(id, firstName, lastName, yearBirth, country);
+        this.studentDatabase.addStudent(id, firstName, lastName, yearBirth, country);
     }
 
     @Override
     public void addCourse(String id, String name, int credits) {
-        this.courses.addCourse( id, name, credits );
+        this.courseDatabase.addCourse( id, name, credits );
     }
 
     @Override
@@ -138,15 +135,15 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
 
     //Resets the database, making it empty
     public void reset() {
-        this.students.removeAll();
-        this.courses.removeAll();
+        this.studentDatabase.removeAll();
+        this.courseDatabase.removeAll();
     }
 
 
     public void addStudent(String currLine) {
 
         //Forward the adding of student to the student database.
-        this.students.addStudent( currLine.split("/")[1],
+        this.studentDatabase.addStudent( currLine.split("/")[1],
                 currLine.split("/")[2],
                 currLine.split("/")[3],
                 Integer.parseInt( currLine.split("/")[4] ),
@@ -158,7 +155,7 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
                 currLine.split("/")[2],
                 currLine.split("/")[3] );
 
-        this.courses.addCourse(course);
+        this.courseDatabase.addCourse(course);
     }
 
     //Method to add a completion event to a student in the University Database
@@ -168,7 +165,7 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
         Date newDate = new Date( currLine.split( "/" )[4] );
 
         //Forward the adding of the CompletionEvent object to the StudentDatabase.
-        this.students.addCompletionEvent( currLine.split( "/" )[1],
+        this.studentDatabase.addCompletionEvent( currLine.split( "/" )[1],
                 currLine.split( "/" )[2],
                 Float.parseFloat( currLine.split( "/" )[3] ),
                 newDate.getDays(), newDate.getMonths(), newDate.getYears() );

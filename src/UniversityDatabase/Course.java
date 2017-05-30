@@ -1,10 +1,6 @@
 package UniversityDatabase;
 
-import com.sun.org.apache.xalan.internal.xsltc.dom.ArrayNodeListIterator;
-import org.omg.CORBA.COMM_FAILURE;
-
 import java.util.ArrayList;
-import java.util.Vector;
 
 /**
  * Created by brandon on 4/8/17.
@@ -22,7 +18,7 @@ class Course {
 
     //Course object constructor
 
-    Course(String uniqueId, String name, String credits) {
+    Course(String uniqueId, String name, int credits) {
         this.credits = credits;
         this.uniqueId = uniqueId;
         this.name = name;

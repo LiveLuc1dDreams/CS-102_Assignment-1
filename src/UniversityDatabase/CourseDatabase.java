@@ -40,7 +40,9 @@ class CourseDatabase implements CourseDatabaseInterface{
 
     @Override
     public void addCourse(String id, String name, int credits) throws CourseDatabaseException {
+        Course newCourse = new Course(id, name, credits);
 
+        this.courses.add( newCourse );
     }
 
     @Override
