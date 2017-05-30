@@ -7,18 +7,22 @@ package UniversityDatabase;
 
 public class CompletionEvent{
 
-    private String finalGrade;
+    private Float finalGrade;
     private Date date;
     private String courseId;
     private String studentId;
 
     //CompletionEvent object constructor
 
-    public CompletionEvent(String studentId, String courseId, String finalGrade, Date date ) {
+    public CompletionEvent(String studentId, String courseId, Float finalGrade, Date date ) {
         this.finalGrade = finalGrade;
         this.date = date;
         this.courseId = courseId;
         this.studentId = studentId;
+    }
+
+    public CompletionEvent(String studentId, String courseId, float grade, int dateYears, int dateMonths, int dateDays) {
+
     }
 
     boolean isOlder(CompletionEvent completionEvent) {

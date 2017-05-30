@@ -78,5 +78,9 @@ class Course {
     void setName(String name) {
         this.name = name;
     }
+
+    public ArrayList <CompletionEvent> getCourseCompletions() {
+        return courseCompletions;
+    }
 }
 

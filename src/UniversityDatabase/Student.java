@@ -16,7 +16,7 @@ class Student {
     private String uniqueId;
     private String firstName;
     private String lastName;
-    private String birthyear;
+    private int birthyear;
     private String country;
 
     //ArrayList to store the completions
@@ -95,5 +95,9 @@ class Student {
 
         return GPA; //TODO: make this a calculation based upon studentCompletions
         //TODO: Take the average gpa of all the courses a student has completed and divide by the number of courses
+    }
+
+    ArrayList<CompletionEvent> getStudentCompletions() {
+        return this.studentCompletions;
     }
 }

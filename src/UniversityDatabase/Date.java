@@ -21,6 +21,12 @@ class Date {
         System.out.println("Date constructor test message:" + years + " " + months + " " + days);
     }
 
+    public Date(int dateDays, int dateMonths, int dateYears) {
+        this.days = dateDays;
+        this.months = dateMonths;
+        this.years = dateYears;
+    }
+
 
     public boolean isOlder(Date d) {
 

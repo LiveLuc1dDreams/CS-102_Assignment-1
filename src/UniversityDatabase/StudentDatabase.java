@@ -44,30 +44,13 @@ class StudentDatabase implements StudentDatabaseInterface{
         return -1;
     }
 
-    //Add a completion event to a student in the database.
-    void addCompletionEvent(CompletionEvent completion) throws StudentDatabaseException{
-
-        //Try/catch block to handle the event in which the student isn't found in the StudentDatabase.
-        try {
-
-            //Search through the students in the StudentDatabase, and if the student object is found, then call the method
-            // to add the completion event to that student object.
-            searchStudentsById(completion.getStudentId()).addCompletionEvent(completion);
-
-        } catch (StudentDatabaseException e) {
-
-            //Print an error message
-            System.out.println("The student with completion " + completion.toString() + " wasn't found so the completion event won't be added");
-        }
-    }
-
     //Calls the method from the StudentDatabase class to remove all of the items from the database
     void removeAll() {
         this.students.clear();
     }
 
     //Return the current size of the student database array list.
-    int getSize() {
+    private int getSize() {
         return this.students.size();
     }
 
@@ -76,18 +59,20 @@ class StudentDatabase implements StudentDatabaseInterface{
 
         //TODO: Duplicate items need to be handled
         //Instantiate a new student object with parameters taken from the input string.
-        Student student = new Student(id, firstName, lastName, yearBirth, country);
+        Student newStudent = new Student(id, firstName, lastName, yearBirth, country);
 
-        //Check if the student object is already in the database, search by the id.
-        if ( this.students.searchStudentById( student.getUniqueId() ) > -1 ) {
+        //Check if the student object is already in the database (if it has a location, which would be found by the searchStudentsById method), search by the id.
+        if ( this.searchStudentsById( id ) > -1) {
 
-            //If the student was found in the database then replace that student with the one just created.
-            Student oldStudent = this.students.getStudent( student.getUniqueId() );
+            //Assign the location of the student so that we can remove it and replace the new  in the
 
+            //If the student was found in the database delete the existing student and replace it with the one just created.
+            this.students.remove( this.searchStudentsById( id ) );
+            this.students.add( this.searchStudentsById( id ), newStudent );
         }
 
         //Add the newly created student object to the database
-        this.students.addStudent(student);
+        this.students.add(newStudent);
     }
 
 
@@ -95,9 +80,28 @@ class StudentDatabase implements StudentDatabaseInterface{
         return this.students.get( searchStudentsById( id ) );
     }
 
-
+    //Add a completion event to a student in the database.
     public void addCompletionEvent(String studentId, String courseId, float grade, int dateYears, int dateMonths, int dateDays) throws StudentDatabaseException {
 
+        //Create a new date object to be used in the completion event object constructor
+        Date date = new Date(dateDays, dateMonths, dateYears);
+
+        //Create the completion event object to add to the database:
+        CompletionEvent completion = new CompletionEvent( studentId, courseId, grade, date);
+
+        //Try-catch block to handle the event in which the student isn't found in the StudentDatabase.
+        try {
+
+            //Search through the students in the StudentDatabase, and if the student object is found, then call the method
+            // to add the completion event to that student object.
+            Student studentToAdd = this.students.get( searchStudentsById( completion.getStudentId() ) );
+            studentToAdd.addCompletionEvent( completion );
+
+        } catch (StudentDatabaseException e) {
+
+            //Print an error message
+            System.out.println("The student with completion " + completion.toString() + " wasn't found so the completion event won't be added");
+        }
     }
 
 

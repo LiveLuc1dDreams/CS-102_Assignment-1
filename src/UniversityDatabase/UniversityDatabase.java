@@ -103,12 +103,12 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
 
     @Override
     public void printAllCoursesOfAStudent(String studentId) throws UniversityDatabaseException {
-
+        this.students.getStudent( studentId ).getStudentCompletions().toString();
     }
 
     @Override
     public void printAllStudentsOfACourse(String courseId) throws UniversityDatabaseException {
-
+        this.courses.getCourse( courseId ).getCourseCompletions().toString();
     }
 
     @Override
@@ -120,7 +120,7 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
 
     @Override
     public void addCourse(String id, String name, int credits) {
-
+        this.courses.addCourse( id, name, credits );
     }
 
     @Override
@@ -165,15 +165,12 @@ public class UniversityDatabase implements UniversityDatabaseInterface{
     public void addCompletionEvent(String currLine) {
 
         //Create a date object to be used in the constructor for the Completion Event Object
-        Date newDate = new Date( currLine.split("/")[4] );
-
-        //Call the constructor for the Completion Event Object
-        CompletionEvent completion = new CompletionEvent( currLine.split("/")[1],
-                currLine.split("/")[2],
-                currLine.split("/")[3],
-                newDate);
+        Date newDate = new Date( currLine.split( "/" )[4] );
 
         //Forward the adding of the CompletionEvent object to the StudentDatabase.
-        this.students.addCompletionEvent(completion);
+        this.students.addCompletionEvent( currLine.split( "/" )[1],
+                currLine.split( "/" )[2],
+                Float.parseFloat( currLine.split( "/" )[3] ),
+                newDate.getDays(), newDate.getMonths(), newDate.getYears() );
     }
 }
